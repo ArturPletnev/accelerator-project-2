@@ -1,0 +1,26 @@
+@media (min-width: $phone) {
+  .container {
+    display: block;
+    margin: 0 auto;
+    padding-left: 13px;
+    padding-right: 13px;
+    width: 320px;
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: $tablet) {
+  .container {
+    width: 768px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .container {
+    width: 1440px;
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}

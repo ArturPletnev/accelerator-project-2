@@ -2,3 +2,10 @@
 // import Swiper from "swiper";
 // import {Navigation, Pagination} from "swiper/modules";
 // import 'swiper/css';
+
+import { menuToggle } from './menu-open';
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  menuToggle();
+});
