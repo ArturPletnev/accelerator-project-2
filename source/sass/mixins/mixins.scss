@@ -41,3 +41,90 @@
     padding: 20px;
   }
 }
+
+@mixin slider-buttons {
+  display: grid;
+  place-items: center;
+  background-color: $additional-100;
+  border-color: transparent;
+  width: 37px;
+  height: 35px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    width: 13px;
+    height: 1px;
+    background-color: $white-100;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    border: solid 1px $white-100;
+    border-top: transparent;
+    border-left: transparent;
+    transform: translateX(2px) rotate(-45deg);
+  }
+
+  &--prev {
+    transform: rotate(180deg);
+  }
+
+  &:focus-visible {
+    background-color: $white-100;
+    outline: solid 1px transparent;
+
+    &::before {
+      background-color: $active;
+    }
+
+    &::after {
+      border-color: $active;
+    }
+  }
+
+  &:hover {
+    background-color: $white-100;
+    outline: solid 1px $active;
+    outline-offset: -2px;
+
+    &::before {
+      background-color: $active;
+    }
+
+    &::after {
+      border-color: $active;
+    }
+  }
+
+  &:active {
+    color: $white-100;
+    background-color: $active;
+    outline: transparent;
+
+    &::before {
+      background-color: $white-100;
+    }
+
+    &::after {
+      border-color: $white-100;
+    }
+  }
+
+  &:disabled {
+    background-color: $disabled;
+    outline: none;
+    pointer-events: none;
+
+    &::before {
+      background-color: $white-100;
+    }
+
+    &::after {
+      border-color: $white-100;
+    }
+  }
+}

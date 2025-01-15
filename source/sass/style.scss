@@ -1,6 +1,7 @@
 /* Vendor */
-
 @import "vendor/normalize";
+@import "swiper/css";
+@import "swiper/css/pagination";
 
 /* GLOBAL */
 @import "./common/variables";
@@ -12,5 +13,10 @@
 @import "./mixins/media";
 @import "./mixins/mixins";
 
+/* UTIL */
+@import "./util/webp";
+
 /* BLOCKS */
 @import "./blocks/header";
+@import "./blocks/hero";
+@import "./blocks/tours";

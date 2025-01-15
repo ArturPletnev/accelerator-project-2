@@ -1,0 +1,310 @@
+.hero {
+  color: $white-100;
+  background-color: $additional-100;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
+}
+
+.hero:has(.hero__item--active[data-hero="caucasus"]) {
+  background-image: url("../../img/background-images/hero-caucasus-mobile@1x.jpg");
+
+
+  @media (resolution >= 2dppx) {
+    background-image: url("../../img/background-images/hero-caucasus-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    background-image: url("../../img/background-images/hero-caucasus-tablet@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/hero-caucasus-tablet@2x.jpg");
+    }
+  }
+
+  @include desktop {
+    background-image: url("../../img/background-images/hero-caucasus-desktop@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/hero-caucasus-desktop@2x.jpg");
+    }
+  }
+}
+
+.hero:has(.hero__item--active[data-hero="kamchatka"]) {
+  background-image: url("../../img/background-images/hero-kamchatka-mobile@1x.jpg");
+
+  @media (resolution >= 2dppx) {
+    background-image: url("../../img/background-images/hero-kamchatka-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    background-image: url("../../img/background-images/hero-kamchatka-tablet@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/hero-kamchatka-tablet@2x.jpg");
+    }
+  }
+
+  @include desktop {
+    background-image: url("../../img/background-images/hero-kamchatka-desktop@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/hero-kamchatka-desktop@2x.jpg");
+    }
+  }
+}
+
+.hero:has(.hero__item--active[data-hero="altai"]) {
+  background-image: url("../../img/background-images/hero-altai-mobile@1x.jpg");
+
+  @media (resolution >= 2dppx) {
+    background-image: url("../../img/background-images/hero-altai-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    background-image: url("../../img/background-images/hero-altai-tablet@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/hero-altai-tablet@2x.jpg");
+    }
+  }
+
+  @include desktop {
+    background-image: url("../../img/background-images/hero-altai-desktop@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/hero-altai-desktop@2x.jpg");
+    }
+  }
+}
+
+.hero__slider {
+  position: relative;
+}
+
+.hero__container {
+  overflow: hidden;
+  margin-inline: auto;
+}
+
+.hero__list {
+  @include list;
+
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+
+  @include tablet{
+    grid-template-columns: repeat(3, 768px);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, 1440px);
+  }
+}
+
+.hero__item {
+  padding: 119px 20px 114px;
+  position: relative;
+  text-align: center;
+
+  @include tablet {
+    padding: 286px 45px 404px;
+  }
+
+  @include desktop {
+    padding: 124px 120px 56px;
+    text-align: left;
+    max-width: 1440px;
+  }
+}
+
+.hero__item h3 {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 26px;
+  margin-bottom: 10px;
+
+  @include tablet {
+    font-weight: 800;
+    font-size: 56px;
+  }
+
+  @include desktop {
+    margin-bottom: 23px;
+    font-size: 77px;
+  }
+}
+
+.hero__item p {
+  font-family: inherit;
+  font-weight: 400;
+  margin-bottom: 60px;
+  line-height: 1.33;
+  font-size: 15px;
+
+  @include tablet {
+    margin: 14px 0 36px;
+    padding-inline: 102px;
+    font-size: 17px;
+    line-height: 1.41;
+  }
+
+  @include desktop {
+    padding: 0;
+    max-width: 420px;
+  }
+}
+
+.hero__item:has(.hero__image-wrapper) {
+  @include tablet {
+    padding: 83px 45px 50px;
+  }
+
+  @include desktop {
+    padding: 124px 120px 50px;
+  }
+}
+
+.hero__item:has(.hero__image-wrapper) p {
+  @include desktop {
+    max-width: 460px;
+  }
+}
+
+.hero__item-button {
+  @include link;
+  @include button;
+
+  margin-inline: auto;
+  background-color: $additional-100;
+  border-color: transparent;
+  width: 180px;
+
+  @include desktop {
+    margin-bottom: 134px;
+    margin-inline: 0;
+    text-align: center;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: $white-100;
+    color: $active;
+  }
+
+  &:hover {
+    outline: solid 1px $active;
+    color: $active;
+    background-color: $white-100;
+  }
+
+  &:active {
+    background-color: $active;
+    color: $white-100;
+  }
+
+  &:not([href]) {
+    background-color: $disabled;
+    pointer-events: none;
+  }
+}
+
+.hero__pagination {
+  position: absolute;
+  text-align: center;
+
+  @include tablet {
+    --swiper-pagination-bullet-size: 20px;
+  }
+
+  @include desktop {
+    padding-inline: 110px;
+    text-align: right;
+
+    --swiper-pagination-bottom: 90px;
+  }
+}
+
+.hero__pagination button {
+  border: solid 1px $white-100;
+
+  &:focus-visible {
+    outline: solid 1px $white-50;
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    background-color: #d9d9d9;
+  }
+
+  &:active {
+    background-color: $white-50;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+    border-color: $disabled;
+    pointer-events: none;
+  }
+}
+
+.hero__item-mark {
+  display: none;
+
+  @include desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+.hero__item-mark div {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  padding: 13px 19px;
+  border: solid 1px $white-50;
+  display: flex;
+  gap: 8px;
+
+  &::before {
+    padding: 2px;
+    display: block;
+    content: "";
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero__duration {
+  &::before {
+    background: url("/__spritemap#sprite-duration-moon-view");
+  }
+}
+
+.hero__complexity {
+  &::before {
+    background: url("/__spritemap#sprite-complexity-view");
+  }
+}
+
+.hero__image-wrapper {
+  display: none;
+
+  @include tablet {
+    display: block;
+    margin-block: 44px;
+    width: 442px;
+    height: 365px;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 143px;
+    right: 120px;
+    width: 410px;
+    height: 459px;
+  }
+}
