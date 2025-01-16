@@ -128,3 +128,72 @@
     }
   }
 }
+
+@mixin slider-control {
+  display: none;
+  grid-template-columns: repeat(2, 37px);
+  gap: 5px;
+  justify-content: end;
+  opacity: 0;
+
+  @include tablet {
+    display: grid;
+    opacity: 1;
+    gap: 4px;
+  }
+}
+
+@mixin social-action {
+  &:focus-visible {
+    outline: solid 1px transparent;
+  }
+
+  &:hover {
+    outline: solid 1px $primary;
+  }
+
+  &:active {
+    color: $white-100;
+    background-color: $additional-100;
+    outline: transparent;
+  }
+
+  &:not([href]) {
+    color: $disabled;
+    outline: solid 1px $disabled;
+    pointer-events: none;
+  }
+}
+
+@mixin title-shadow {
+  &::before {
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 26px;
+    position: absolute;
+    top: -18px;
+    content: attr(data-title);
+    opacity: 0.03;
+
+    @include tablet {
+      top: -16px;
+      font-size: 40px;
+    }
+
+    @include desktop {
+      font-size: 55px;
+    }
+  }
+}
+
+@mixin slider-width {
+  width: 290px;
+
+  @include tablet {
+    width: 678px;
+  }
+
+  @include desktop {
+    width: 1200px;
+  }
+}

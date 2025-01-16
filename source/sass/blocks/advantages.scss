@@ -1,0 +1,214 @@
+.advantages {
+  @include tablet {
+    background-image: url("../../img/background-images/clouds-2@1x.png");
+    background-repeat: no-repeat;
+    background-position: left 213px top 240px;
+    background-size: 840px 280px;
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/clouds-2@2x.png");
+    }
+  }
+
+  @include desktop {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 568px;
+      left: 0;
+      width: 1440px;
+      height: 447px;
+      background-image: url("../../img/background-images/clouds-3@1x.png");
+      background-repeat: no-repeat;
+      background-size: 1440px 447px;
+
+      @media (resolution >= 2dppx) {
+        background-image: url("../../img/background-images/clouds-3@2x.png");
+      }
+    }
+  }
+}
+
+.advantages__container {
+  padding: 20px 15px;
+  width: 320px;
+  margin-inline: auto;
+  text-align: center;
+
+  @include tablet {
+    padding: 40px 45px;
+    width: 768px;
+  }
+
+  @include desktop {
+    padding: 100px 0;
+    width: 1200px;
+  }
+}
+
+.advantages__title {
+  @include title-shadow;
+
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 22px;
+  margin-block: 17px 36px;
+  position: relative;
+
+  &::before {
+    left: 35px;
+    top: -13px;
+  }
+
+  @include tablet {
+    margin-block: 20px 60px;
+    font-size: 25px;
+  }
+
+  @include desktop {
+    margin-block: 35px 50px;
+    font-size: 35px;
+
+    &::before {
+      left: 370px;
+      top: -29px;
+    }
+  }
+}
+
+.advantages__list {
+  @include list;
+
+  display: grid;
+  gap: 15px;
+
+  @include tablet {
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    margin-bottom: 50px;
+    grid-template-columns: repeat(10, 380px);
+  }
+}
+
+.advantages__item {
+  padding: 20px 10px;
+  outline: solid 1px $additional-20;
+  outline-offset: -1px;
+
+  @include tablet {
+    padding: 30px 20px 29px;
+    min-height: 340px;
+
+    &:last-child {
+      grid-column: 1/-1;
+      width: 324px;
+      justify-self: center;
+    }
+  }
+
+  @include desktop {
+    padding: 40px 20px 10px;
+    width: 380px;
+    min-height: 329px;
+
+    &:last-child {
+      grid-column: auto;
+      order: -1;
+    }
+  }
+}
+
+.advantages__item h3 {
+  font-family: inherit;
+  font-weight: 600;
+  margin-block: 20px 15px;
+  padding-inline: 12px;
+  font-size: 14px;
+
+  @include tablet {
+    margin-block: 26px 15px;
+    font-size: 16px;
+  }
+
+  @include desktop {
+    margin-block: 30px 17px;
+    padding: 0;
+    font-size: 18px;
+  }
+}
+
+.advantages__item div:not(:has(svg)) {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 1.57;
+  }
+}
+
+.advantages__item div:has(svg) {
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  outline: solid 1px $additional-100;
+  outline-offset: -1px;
+
+  @include tablet {
+    width: 48px;
+    height: 48px;
+  }
+
+  @include desktop {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+.advantages__item svg {
+  width: 24px;
+  height: 24px;
+}
+
+.advantages__item:nth-child(2n) br {
+  @include desktop {
+    display: none;
+  }
+}
+
+.advantages__item:nth-child(3n) br {
+  @include desktop {
+    display: none;
+  }
+}
+
+.advantages__item span:first-child {
+  margin-right: 4px;
+
+  @include desktop {
+    margin: 0;
+  }
+}
+
+.advantages__slider-control {
+  display: none;
+
+  @include desktop {
+    @include slider-control;
+
+    justify-content: center;
+  }
+}
+
+.advantages__button {
+  @include slider-buttons;
+}

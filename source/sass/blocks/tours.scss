@@ -13,40 +13,23 @@
 }
 
 .tours__title {
+  @include title-shadow;
+
   font-family: inherit;
   font-weight: 800;
   font-size: 22px;
   margin-bottom: 39px;
   position: relative;
 
-  &::before {
-    font-family: inherit;
-    font-weight: 800;
-    font-size: 26px;
-    position: absolute;
-    top: -18px;
-    content: attr(data-title);
-    opacity: 0.03;
-
-    @include tablet {
-      top: -16px;
-      font-size: 40px;
-    }
-
-    @include desktop {
-      font-size: 55px;
-    }
-  }
-
   @include tablet {
+    font-size: 25px;
     padding: 0;
     margin: 25px 0 35px;
-    font-size: 25px;
   }
 
   @include desktop {
-    margin: 3px 0 0;
     font-size: 35px;
+    margin: 3px 0 0;
   }
 }
 
