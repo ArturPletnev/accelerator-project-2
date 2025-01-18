@@ -180,7 +180,7 @@
 }
 
 .advantages__item:nth-child(2n) br {
-  @include desktop {
+  @include tablet {
     display: none;
   }
 }

@@ -90,6 +90,11 @@
   font-weight: 400;
   line-height: 1.43;
 
+  @include tablet {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
   @include desktop {
     font-size: 14px;
     line-height: 1.57;

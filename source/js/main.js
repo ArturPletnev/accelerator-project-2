@@ -1,8 +1,3 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-import 'swiper/scss';
-
 import { menuToggle } from './menu-open';
 import { initHeroSlider } from './hero-slider';
 import { initToursSlider } from './tours-slider';

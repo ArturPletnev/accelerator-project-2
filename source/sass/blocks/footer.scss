@@ -1,0 +1,222 @@
+.footer__contacts {
+  margin-inline: auto;
+}
+
+.footer__navigation {
+  margin-inline: auto;
+  padding: 23px 15px 20px;
+  display: grid;
+  place-items: center;
+  border-top: 1px solid $stroke-br;
+
+  @include tablet {
+    padding: 34px 45px;
+  }
+
+  @include desktop {
+    padding: 40px 120px;
+  }
+}
+
+.footer__navigation-wrapper {
+  @include tablet {
+    margin-bottom: 32px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    margin-bottom: 30px;
+  }
+}
+
+.footer__logo {
+  @include link;
+
+  margin-bottom: 18px;
+  text-align: center;
+
+  @include tablet {
+    margin: 0;
+  }
+
+  @include desktop {
+    padding-left: 30px;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    color: $active;
+  }
+
+  &:not([href]) {
+    color: $disabled;
+    pointer-events: none;
+  }
+}
+
+.footer__logo svg {
+  object-fit: cover;
+  width: 142px;
+  height: 42px;
+}
+
+.footer__navigation-list {
+  @include list;
+
+  margin-bottom: 12px;
+  column-count: 2;
+  column-gap: 72px;
+  text-align: center;
+
+  @include tablet {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+    column-count: auto;
+  }
+
+  @include desktop {
+    gap: 25px;
+    padding-right: 30px;
+  }
+}
+
+.footer__navigation-link {
+  @include link;
+
+  margin-bottom: 9px;
+  padding: 3px;
+  display: inline-flex;
+
+  @include tablet {
+    margin: 0;
+  }
+
+  @include desktop {
+    font-size: 16px;
+  }
+
+  &:focus-visible {
+    outline: solid 1px $primary;
+  }
+
+  &:hover {
+    text-decoration: underline solid $primary;
+    text-underline-offset: 5px;
+  }
+
+  &:active {
+    color: $additional-100;
+    text-decoration: transparent;
+  }
+
+  &:not([href]) {
+    color: $disabled;
+    text-decoration: transparent;
+    pointer-events: none;
+  }
+}
+
+.footer__phone {
+  display: none;
+
+  &:focus-visible {
+    color: $additional-100;
+  }
+
+  &:hover {
+    color: $additional-20;
+  }
+
+  &:active {
+    color: $active;
+  }
+
+  &:not([href]) {
+    color: $disabled;
+    pointer-events: none;
+  }
+
+  @include desktop {
+    @include link;
+
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+  }
+}
+
+.footer__social-list {
+  @include list;
+
+  margin-bottom: 19px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @include tablet {
+    margin-bottom: 32px;
+  }
+
+  @include desktop {
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+}
+
+.footer__social-link {
+  @include link;
+  @include social-action;
+
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  outline: solid 1px $primary-30;
+
+  @include desktop {
+    width: 30px;
+  }
+}
+
+.footer__link {
+  @include link;
+
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+
+  @include tablet {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+  }
+
+  &:hover {
+    text-decoration: underline solid $primary;
+    text-underline-offset: 5px;
+  }
+
+  &:active {
+    color: $active;
+    text-decoration: transparent;
+  }
+
+  &:not([href]) {
+    color: $disabled;
+    text-decoration: transparent;
+    pointer-events: none;
+  }
+}

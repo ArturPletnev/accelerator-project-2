@@ -1,0 +1,52 @@
+.page {
+  width: 100%;
+  height: 100%;
+}
+
+.page__body:not(:has(.header__navigation-list--close)) {
+  @include desktop {
+    overflow: hidden;
+    margin-right: 17px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background: rgba(45, 56, 63, 0.6);
+      inset: 0;
+    }
+  }
+}
+
+.page__body main {
+  padding-top: 100px;
+  flex-grow: 1;
+  background-image: url("../../img/background-images/tours-background-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-position: right -204px top 677px;
+  background-size: 346px 595px;
+
+  @media (resolution >= 2dppx) {
+    background-image: url("../../img/background-images/tours-background-mobile@2x.png");
+  }
+
+  @include tablet {
+    padding-top: 82px;
+    background-image: url("../../img/background-images/tours-background-tablet@1x.png");
+    background-position: right -177px top 1024px;
+    background-size: 602px 1630px;
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/tours-background-tablet@2x.png");
+    }
+  }
+
+  @include desktop {
+    padding-top: 126px;
+    background-image: url("../../img/background-images/tours-background-desktop@1x.png");
+    background-position: right 0 top 800px;
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/tours-background-desktop@2x.png");
+    }
+  }
+}

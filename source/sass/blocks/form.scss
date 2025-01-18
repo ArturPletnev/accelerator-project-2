@@ -1,0 +1,246 @@
+.form {
+  position: relative;
+  background-color: var(--overlay-20, rgba(0, 0, 0, 0.2));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../img/background-images/form-mobile@1x.jpg");
+  min-height: 638px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    inset: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-20, rgba(0, 0, 0, 0.2));
+  }
+
+  @media (resolution >= 2dppx) {
+    background-image: url("../../img/background-images/form-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    min-height: 680px;
+  }
+
+  @include desktop {
+    min-height: 760px;
+  }
+
+  @include desktop {
+    background-image: url("../../img/background-images/form-desktop@1x.jpg");
+
+    @media (resolution >= 2dppx) {
+      background-image: url("../../img/background-images/form-desktop@2x.jpg");
+    }
+  }
+}
+
+.form__container {
+  margin-inline: auto;
+  padding: 174px 31px;
+  position: relative;
+  width: 320px;
+  z-index: 1;
+  text-align: center;
+
+  @include tablet {
+    padding-inline: 204px;
+    width: 768px;
+  }
+
+  @include desktop {
+    padding: 292px 240px;
+    width: 1440px;
+  }
+}
+
+.form h2 {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 22px;
+  margin-block: 3px 17px;
+  color: $white-100;
+
+  @include tablet {
+    margin-block: 13px 23px;
+    font-size: 25px;
+  }
+
+  @include desktop {
+    margin-block: 4px 20px;
+    font-size: 35px;
+  }
+}
+
+.form p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-block: 0 20px;
+  color: $white-100;
+
+  @include tablet {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @include desktop {
+    margin-bottom: 38px;
+  }
+}
+
+.form br {
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.form__form {
+  display: grid;
+  gap: 8px;
+  text-align: left;
+
+  @include tablet {
+    gap: 11px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 360px 360px 180px;
+    gap: 30px;
+  }
+}
+
+.form__label {
+  display: grid;
+  cursor: pointer;
+}
+
+.form__label:focus-within span {
+  transition: opacity 0.3s ease 0.6s;
+  opacity: 0;
+}
+
+.form__label:has(.form__input:not(:placeholder-shown)) span {
+  transition: opacity 0.3s ease 0.6s;
+  opacity: 0;
+}
+
+.form__label span {
+  @include button;
+
+  padding: 18px 15px 14px;
+  grid-area: 1/1;
+  z-index: 1;
+  opacity: 0.5;
+  transition: opacity 0.3s ease 0.6s;
+
+  @include tablet {
+    padding: 20px 30px;
+  }
+}
+
+.form__input {
+  padding: 18px 15px 14px;
+  grid-area: 1/1;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  color: $primary;
+  border: 0 solid $additional-20;
+  border-radius: 2px;
+  cursor: pointer;
+
+  @include tablet {
+    padding-inline: 30px;
+    border: 1px solid $additional-20;
+  }
+
+  &::placeholder {
+    transition: opacity 0.9s ease;
+    opacity: 0;
+    color: $additional-100;
+  }
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 1px $primary;
+    outline: solid 1px $white-100;
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $additional-100;
+    outline: solid 1px $white-100;
+  }
+
+  &:disabled {
+    box-shadow: inset 0 0 0 1px $disabled;
+    outline: solid 1px $white-100;
+  }
+
+  &:focus-within:placeholder-shown {
+    box-shadow: inset 0 0 0 1px $additional-100;
+    outline: solid 1px $white-100;
+  }
+}
+
+.form__input--error {
+  box-shadow: inset 0 0 0 1px $error;
+  outline: solid 1px $white-100;
+  color: rgb(45, 56, 63, 0.5);
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 1px $error;
+    outline: solid 1px $white-100;
+    color: rgb(45, 56, 63, 0.5);
+  }
+}
+
+.form__input:focus-within::placeholder {
+  transition: opacity 0.9s ease 0.6s;
+  opacity: 0.5;
+}
+
+.form__button {
+  @include button;
+
+  padding-block: 19px;
+  color: $white-100;
+  background-color: $additional-100;
+  border-color: transparent;
+  cursor: pointer;
+
+  @include tablet {
+    padding-block: 19px 16px;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: $white-100;
+    color: $active;
+  }
+
+  &:hover {
+    outline: solid 1px $active;
+    color: $active;
+    background-color: $white-100;
+  }
+
+  &:active {
+    background-color: $active;
+    color: $white-100;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+    pointer-events: none;
+  }
+}

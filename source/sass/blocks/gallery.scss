@@ -1,0 +1,152 @@
+.gallery {
+  padding-top: 20px;
+
+  @include tablet {
+    padding-top: 40px;
+  }
+
+  @include desktop {
+    padding-top: 100;
+  }
+}
+
+.gallery__title-wrapper {
+  margin-inline: auto;
+  width: 290px;
+
+  @include tablet {
+    margin-left: 0;
+    width: 400px;
+  }
+
+  @include desktop {
+    width: 600px;
+  }
+}
+
+.gallery__title-wrapper p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 1.57;
+  }
+
+  @include desktop {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.gallery__title-wrapper br {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.gallery__title {
+  @include title-shadow;
+
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 22px;
+  margin-block: 17px 26px;
+  position: relative;
+
+  @include tablet {
+    font-size: 25px;
+    margin-block: 20px 31px;
+  }
+
+  @include desktop {
+    font-size: 35px;
+    margin-block: 36px 24px;
+  }
+}
+
+.gallery__list {
+  @include list;
+
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+
+  @include desktop {
+    gap: 5px;
+  }
+}
+
+.gallery__image-wrapper,
+.gallery__item img {
+  width: 158px;
+
+  @include tablet {
+    width: 253px;
+  }
+
+  @include desktop {
+    width: 284px;
+  }
+}
+
+.gallery__item:nth-child(even) img {
+  width: 157px;
+
+  @include tablet {
+    width: 252px;
+  }
+
+  @include desktop {
+    width: 284px;
+  }
+}
+
+.gallery__slider-wrapper {
+  padding-inline: 15px;
+  margin-bottom: 19px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+
+  @include tablet {
+    margin-inline: auto;
+    padding-inline: 45px;
+    margin-bottom: 6px;
+    align-items: end;
+    width: 768px;
+  }
+
+  @include desktop {
+    padding: 47px 120px 0;
+    margin-bottom: 29px;
+    width: 1440px;
+  }
+}
+
+.gallery__slider-control {
+  display: none;
+
+  @include tablet {
+    @include slider-control;
+
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.gallery__button {
+  @include slider-buttons;
+}
