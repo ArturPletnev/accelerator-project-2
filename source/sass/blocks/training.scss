@@ -130,6 +130,12 @@
   &:nth-child(3) {
     order: -1;
   }
+
+  @include tablet {
+    &:nth-child(3) {
+      order: 0;
+    }
+  }
 }
 
 .training__slider {
@@ -255,7 +261,7 @@
 
     &:nth-child(3) {
       order: 3;
-      padding-right: 20px;
+      padding-right: 11px;
     }
   }
 

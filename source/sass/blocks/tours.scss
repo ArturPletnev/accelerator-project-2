@@ -245,7 +245,6 @@
 
   @include tablet {
     gap: 27px;
-    justify-content: space-around;
   }
 
   @include desktop {
@@ -266,10 +265,14 @@
 
 .tours__detail-meaning {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 12px;
   margin: 0;
   padding-block: 2px;
+
+  @include tablet {
+    font-size: 13px;
+  }
 }
 
 .tours__slider-control {

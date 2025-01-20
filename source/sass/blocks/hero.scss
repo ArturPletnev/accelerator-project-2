@@ -94,7 +94,7 @@
   display: grid;
   grid-template-columns: repeat(3, 320px);
 
-  @include tablet{
+  @include tablet {
     grid-template-columns: repeat(3, 768px);
   }
 
@@ -214,8 +214,14 @@
   position: absolute;
   text-align: center;
 
+  --swiper-pagination-bullet-size: 15px;
+  --swiper-pagination-color: #ffffff;
+  --swiper-pagination-bottom: 40px;
+  --swiper-pagination-bullet-horizontal-gap: 11px;
+
   @include tablet {
     --swiper-pagination-bullet-size: 20px;
+    --swiper-pagination-bullet-horizontal-gap: 10px;
   }
 
   @include desktop {

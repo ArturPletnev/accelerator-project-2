@@ -13,7 +13,7 @@
   display: grid;
 
   @include tablet {
-    padding: 19px 45px;
+    padding: 20px 45px;
     grid-template-columns: repeat(3, 226px);
     align-items: center;
   }
@@ -179,6 +179,7 @@
 
   @include tablet {
     font-size: 16px;
+    padding-top: 2px;
   }
 
   @include desktop {
